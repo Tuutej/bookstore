@@ -20,9 +20,17 @@ public class Book {
 	
 	// constructors
 	
-	public Book(Long id, String title, String author, Integer year, Integer isbn, Double price) {
+	public Book() {
 		super();
-		this.id = id;
+		this.title = null;
+		this.author = null;
+		this.year = 0;
+		this.isbn = 0;
+		this.price = 0.0;
+	}
+	
+	public Book(String title, String author, Integer year, Integer isbn, Double price) {
+		super();
 		this.title = title;
 		this.author = author;
 		this.year = year;
@@ -30,15 +38,6 @@ public class Book {
 		this.price = price;
 	}
 	
-	public Book() {
-		super();
-		this.id = null;
-		this.title = null;
-		this.author = null;
-		this.year = null;
-		this.isbn = null;
-		this.price = null;
-	}
 	
 	// setters
 
