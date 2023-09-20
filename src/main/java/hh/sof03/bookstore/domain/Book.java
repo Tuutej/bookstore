@@ -15,7 +15,7 @@ public class Book {
 	private String author;
 	@Column(name="release_year")
 	private Integer year;
-	private Integer isbn;
+	private String isbn;
 	private Double price;
 	
 	// constructors
@@ -24,12 +24,12 @@ public class Book {
 		super();
 		this.title = null;
 		this.author = null;
-		this.year = 0;
-		this.isbn = 0;
-		this.price = 0.0;
+		this.year = null;
+		this.isbn = null;
+		this.price = null;
 	}
 	
-	public Book(String title, String author, Integer year, Integer isbn, Double price) {
+	public Book(String title, String author, Integer year, String isbn, Double price) {
 		super();
 		this.title = title;
 		this.author = author;
@@ -53,7 +53,7 @@ public class Book {
 	public void setYear(Integer year) {
 		this.year = year;
 	}
-	public void setIsbn(Integer isbn) {
+	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
 	public void setPrice(Double price) {
@@ -74,7 +74,7 @@ public class Book {
 	public Integer getYear() {
 		return year;
 	}
-	public Integer getIsbn() {
+	public String getIsbn() {
 		return isbn;
 	}
 	public Double getPrice() {

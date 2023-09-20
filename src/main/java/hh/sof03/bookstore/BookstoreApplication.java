@@ -21,17 +21,17 @@ public class BookstoreApplication {
 
 	
 	@Bean
-	public CommandLineRunner bookDemo(BookRepository bookRepository) { 
+	public CommandLineRunner bookDemo(BookRepository bookRepo) { 
 		return (args) -> {
 			log.info("add some books");
-			Book book1 = new Book("Moby Dick", "Herman Melville", 1851, 1989631649, 14.99);
-			Book book2 = new Book("Das Kapital", "Karl Marx", 1867, 1789430658, 29.99);
+			Book book1 = new Book("Moby Dick", "Herman Melville", 1851, "978-1989631645", 14.99);
+			Book book2 = new Book("Das Kapital", "Karl Marx", 1867, "978-1789430653", 29.99);
 			
-			bookRepository.save(book1);
-			bookRepository.save(book2);	
+			bookRepo.save(book1);
+			bookRepo.save(book2);	
 			
 			log.info("fetch all books");
-			for (Book book : bookRepository.findAll()) {
+			for (Book book : bookRepo.findAll()) {
 				log.info(book.toString());
 			}
 
