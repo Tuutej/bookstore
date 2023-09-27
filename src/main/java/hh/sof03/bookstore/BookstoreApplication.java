@@ -29,16 +29,16 @@ public class BookstoreApplication {
 			
 			Category category1 = new Category("Sci-fi");
 			categoryRepo.save(category1);
-			Category category2 = new Category("Comic");
+			Category category2 = new Category("Non-fiction");
 			categoryRepo.save(category2);
-			Category category3 = new Category("Horror");
+			Category category3 = new Category("Adventure");
 			categoryRepo.save(category3);
 			Category category4 = new Category("Fantasy");
 			categoryRepo.save(category4);
 			
 			
-			Book book1 = new Book("Moby Dick", "Herman Melville", 1851, "978-1989631645", 14.99);
-			Book book2 = new Book("Das Kapital", "Karl Marx", 1867, "978-1789430653", 29.99);
+			Book book1 = new Book("Moby Dick", "Herman Melville", 1851, "978-1989631645", 14.99, category3);
+			Book book2 = new Book("Das Kapital", "Karl Marx", 1867, "978-1789430653", 29.99, category2);
 			
 			bookRepo.save(book1);
 			bookRepo.save(book2);	
