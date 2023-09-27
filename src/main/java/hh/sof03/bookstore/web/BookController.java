@@ -12,12 +12,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import hh.sof03.bookstore.domain.Book;
 import hh.sof03.bookstore.domain.BookRepository;
+import hh.sof03.bookstore.domain.CategoryRepository;
 
 @Controller
 public class BookController {
 	
 		@Autowired
 		private BookRepository bookRepo;
+		
+		@Autowired
+		private CategoryRepository categoryRepo;
 	
 		// list books in database
 		
@@ -34,6 +38,7 @@ public class BookController {
 		@RequestMapping(value = "/add")
 		public String addBook(Model model) {
 			model.addAttribute("book", new Book());
+			model.addAttribute("categories", categoryRepo.findAll());
 			return "addbook";
 		}
 		
