@@ -34,6 +34,4 @@ public class BookRestController {
 		return bookRepository.findById(bookId);
 	}
 	
-	
-
 }
