@@ -11,6 +11,8 @@ import hh.sof03.bookstore.domain.Book;
 import hh.sof03.bookstore.domain.BookRepository;
 import hh.sof03.bookstore.domain.Category;
 import hh.sof03.bookstore.domain.CategoryRepository;
+import hh.sof03.bookstore.domain.User;
+import hh.sof03.bookstore.domain.UserRepository;
 
 @SpringBootApplication
 public class BookstoreApplication {
@@ -23,7 +25,7 @@ public class BookstoreApplication {
 
 	
 	@Bean
-	public CommandLineRunner bookDemo(BookRepository bookRepo, CategoryRepository categoryRepo) { 
+	public CommandLineRunner bookDemo(BookRepository bookRepo, CategoryRepository categoryRepo, UserRepository userRepo) { 
 		return (args) -> {
 			log.info("add some books");
 			
@@ -42,6 +44,12 @@ public class BookstoreApplication {
 			
 			bookRepo.save(book1);
 			bookRepo.save(book2);	
+			
+			User user1 = new User("user", "$2a$10$WGQCsEUMG3yjQ3hPHNAhJ.dqooiERQ09fdjmQGkomoaGUcjPV33oC", "USER");
+			User user2 = new User("admin", "$2a$10$XvYoX2bNgFKlzpyzOi8JmO7moKvtaWgXngY5Catyu0Zw1vs2sj4Bi", "ADMIN");
+			
+			userRepo.save(user1);
+			userRepo.save(user2);
 			
 			log.info("fetch all books and categories");
 			
