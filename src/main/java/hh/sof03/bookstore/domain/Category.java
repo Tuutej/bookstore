@@ -43,7 +43,7 @@ public class Category {
 	public void setCategoryid(Long categoryid) {
 		this.categoryid = categoryid;
 	}
-	public void setStudents(List<Book> books) {
+	public void setBooks(List<Book> books) {
 		this.books = books;
 	}
 	
